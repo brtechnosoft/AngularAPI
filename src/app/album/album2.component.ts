@@ -17,22 +17,11 @@ export class AlbumComponent2 {
   constructor(private http: Http) {   
 	}
 
-//httpdata;
- //  ngOnInit() {
-  //    this.http.get("http://jsonplaceholder.typicode.com/albums")
-   //   .pipe(map((response) => response.json()))
-   //   .subscribe((data) => this.displaydata(data));     
-   //}
- //  displaydata(data) {this.httpdata = data;}
-//}
-
   httpdata;
    name;
    searchparam = 2;
-  //  searchparam = get("id");
    ngOnInit() {
       this.http.get("http://jsonplaceholder.typicode.com/albums?userId="+this.searchparam)
-	//  this.http.get("http://jsonplaceholder.typicode.com/albums?userId="+id)
       .pipe(map((response) => response.json()))
       .subscribe((data) => this.displaydata(data));     
    }
